@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React from 'react'
+import {AnimatePresence} from 'framer-motion'
+import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom'
 import './App.css';
+import HomePage from './elements/HomePage';
+import NavBar from './elements/NavBar';
+import {motion} from 'framer-motion'
 
 function App() {
+
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HomePage></HomePage>
+      <NavBar></NavBar>
     </div>
   );
 }
