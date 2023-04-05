@@ -164,13 +164,8 @@ h1{
 }
 
 .ohayo-jap {
-  position: absolute;
-  font-size: 3em;
   top:50%;
-  transform: translateY(-50%);
-  opacity: 0;
   position: absolute;
   font-size: 3em;
-  width: fit-content;
   white-space: nowrap;
 }

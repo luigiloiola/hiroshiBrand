@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {motion} from 'framer-motion'
+import {motion, useAnimate, easeIn} from 'framer-motion'
 import { useState, useEffect } from 'react';
 import {styled} from "styled-components";
 
@@ -7,45 +7,33 @@ import {styled} from "styled-components";
 
 export default function HomePage() {
 
-  //https://www.framer.com/motion/use-animate/
-  const mainTextHovering = <div>
-              <motion.h1
-                animate={{
-                  opacity :0,
-                  duration:1}}
-                  className='main-text'>Ohayo, we are Hiro</motion.h1>
-                <motion.h1
-                  animate ={{
-                    opacity:1,
-                    duration:1
-                    }} 
-                  className='jap green ohayo-jap'>オハヨヒロだ</motion.h1>
-  </div>
-  const mainTextPlain =<>
-    <motion.h1
-                    initial = {{
-                      opacity:0
-                    }}
-                    animate={{
-                      opacity :1,
-                      duration:1}}
-                      className='main-text'>Ohayo, we are Hiro</motion.h1>
-                      
-                      <motion.h1
-                      initial = {{
-                        opacity:1
-                      }} 
-                      animate ={{
-                        opacity:0,
-                        duration:1
-                      }}
-                      className='jap green ohayo-jap'>オハヨヒロだ</motion.h1>
-  </>
+  const [scope, changeOpacity] = useAnimate()
+  const [scopeBackground, scale] = useAnimate()
+
+  useEffect(()=>{
+    if(hovering){
+      changeOpacity('h1' ,{opacity:0} ,{duration:0.5})
+      changeOpacity('div', {opacity:1, y:'-50%'} ,{duration:0.5})
+      scale(scopeBackground.current, {y:'-50%'})
+      scale(scopeBackground.current, {scale:1.2}, {duration:0.4, ease:'easeOut'})
+    } else{
+      changeOpacity('h1', {opacity:1}, {duration:0.4})
+      changeOpacity('div', {opacity:0}, {duration:0.4})
+      scale(scopeBackground.current, {duration:0, y:'-50%'})
+      scale(scopeBackground.current, {scale:1},{duration:0.4, ease:'easeOut'})
+
+    }
+
+  })
+
+
+
+
   const [hovering, setHovering] = useState(false)
     return (
       <div className='homePage'>
         <div className='left-container'>
-          <div className='inner-left-container'>
+          <div ref={scope} className='inner-left-container'>
             <span id = 'hjg1' className='hiroshi-jap green jap'>ヒロシ</span>
             <span id = 'hjg2' className='hiroshi-jap green jap'>ヒロシ</span>
             <span id = 'lorem1'>Lorem ipsum dolor iores, t facilis deleniti repudiandae doloremque harum explicabo fugiat sapiente, qui possimus nostrum ea officia illum beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis saepe sunt vitae amet quaerat, nemo quasi voluptate cupiditate animi nat, autem.</span>
@@ -54,14 +42,15 @@ export default function HomePage() {
         </div>
         <div className='right-container'>
           <div className='right-inner-container'>
-            <div className='back-hiroshi-jap-container'>
-              <motion.div className='jap-text jap'>ヒ</motion.div>
+            <div ref={scopeBackground} className='back-hiroshi-jap-container'>
+              <motion.div  className='jap-text jap'>ヒ</motion.div>
               <motion.div className='jap-text jap'>ロ</motion.div>
               <motion.div className='jap-text jap' id='shi-jap'>シ</motion.div>
             </div>
             
-            <div  onMouseEnter = {()=> setHovering(true)} onMouseLeave={()=>setHovering(false)} id='main-text-container' >
-              {hovering ? (mainTextHovering):(mainTextPlain)}
+            <div  ref = {scope} onMouseEnter = {()=> setHovering(true)} onMouseLeave={()=>setHovering(false)} id='main-text-container' >
+              <h1 className='main-text'>Ohayo, we are Hiro</h1>
+              <div className='jap green ohayo-jap'>オハヨヒロだ</div>
             </div>
           </div>
 
