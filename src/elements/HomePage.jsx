@@ -19,21 +19,16 @@ export default function HomePage(props) {
 
   //animation for 'ohayo we are hiro'
 
-  const x = useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-6, 0, 0, 6]);
-  const y = useTransform(props.mousePosY, [0,windowSizeY/2,windowSizeY/2,windowSizeY],[-6, 0, 0, 6]);
-  const springX = useSpring(x,springOptions);
-  const springY = useSpring(y,springOptions);
+  const springX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-6, 0, 0, 6]),springOptions);
+  const springY = useSpring(useTransform(props.mousePosY, [0,windowSizeY/2,windowSizeY/2,windowSizeY],[-6, 0, 0, 6]),springOptions);
 
   //animations for 'hiroshi-jap'
-  const backX = useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]);
-  const backY = useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]);
-  const springBackX = useSpring(backX, springOptions);
-  const springBackY = useSpring(backY,springOptions);
+  const springBackX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]), springOptions);
+  const springBackY = useSpring(useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]),springOptions);
 
-  const xLeft = useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[13, 0, 0, -13])
-  const yLeft = useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[13, 0, 0, -13])
-  const springXLeft = useSpring(xLeft, springOptions)
-  const springYLeft = useSpring(yLeft, springOptions)
+  //animations for svg in left container
+  const springXLeft = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[13, 0, 0, -13]), springOptions)
+  const springYLeft = useSpring(useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[13, 0, 0, -13]), springOptions)
 
 
 
