@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {motion, useAnimate, easeIn} from 'framer-motion'
 import { useState, useEffect } from 'react';
-import {styled} from "styled-components";
 
 
 
