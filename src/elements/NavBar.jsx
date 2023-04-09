@@ -4,7 +4,7 @@ export class NavBar extends Component {
   render() {
     return (
       <>
-        <div className='upper-navbar'><a style={{textDecoration:'underline'}} className='green' href='google.com'>start a project</a></div>
+        <div className='upper-navbar'><a style={{textDecoration:'underline'}} className='green' href='google.com'>Start a project</a></div>
         <header className='header'>
           <ul className='navBar'>
             <li><a>About</a></li>
