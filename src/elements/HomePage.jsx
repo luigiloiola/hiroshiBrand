@@ -13,6 +13,8 @@ export default function HomePage(props) {
 
   const springOptions = {damping:16, stiffness:50, mass:1.5}
 
+  const q=1;
+
 
   const [scope, changeOpacity] = useAnimate();
   const [scopeBackground, scale] = useAnimate();
