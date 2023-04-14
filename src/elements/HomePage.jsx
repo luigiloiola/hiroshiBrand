@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {useLocation} from 'react-router-dom'
 import {motion, useAnimate, useMotionValue, useTransform, useSpring ,easeOut, spring} from 'framer-motion'
 import { useState, useEffect, useRef } from 'react';
 import {styled} from "styled-components";
@@ -13,7 +14,7 @@ export default function HomePage(props) {
 
   const springOptions = {damping:16, stiffness:50, mass:1.5}
 
-  const q=1;
+
 
 
   const [scope, changeOpacity] = useAnimate();
@@ -28,13 +29,7 @@ export default function HomePage(props) {
   const springBackX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]), springOptions);
   const springBackY = useSpring(useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]),springOptions);
 
-  //animations for svg in left container
-  const springXLeft = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[13, 0, 0, -13]), springOptions)
-  const springYLeft = useSpring(useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[13, 0, 0, -13]), springOptions)
-
-
-
-  
+  let location = useLocation();
 
   useEffect(()=>{
     if(hovering){

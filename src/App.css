@@ -1,7 +1,4 @@
-@font-face {
-  font-family: helvetica;
-  src: url(fonts/HelveticaNowDisplayBdIt.otf);
-}
+
 @font-face {
   font-family: helvetica-display-extra-bold;
   src: url(fonts/HelveticaNowDisplayXBold.otf);
@@ -10,6 +7,15 @@
   font-family: jap-bold;
   src: url(fonts/GenShinGothicMonospaceHeavy.ttf);
 }
+
+@font-face {
+  font-family: helvetica-regular;
+  src: url(fonts/Helvetica-Now-Display-Black.otf);
+}
+@font-face {
+  font-family: helvetica-bold;
+  src: url(fonts/HelveticaNowTextBold.otf);
+}
 *{
   list-style: none;
   text-decoration:none;
@@ -17,13 +23,13 @@
   padding: 0;
   border: none;
   color: whitesmoke;
-  font-family:Helvetica-display-extra-bold;
 }
 
 .upper-navbar{
   position: fixed;
   top:5vh;
   right: 5vh;
+  font-family:helvetica-regular;
 
 
 }
@@ -65,13 +71,18 @@ h1{
   justify-self: end;
   align-items: center;
 }
+.NavBar{
+}
 
 .navBar li{
-  margin:1vw;
+  margin:0.8vw;
+  font-family: helvetica;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition-duration: 0.3s;
 }
 .navBar li:hover{
   opacity: 0.5;
-  transition-duration: 0.2s;
 }
 
 
@@ -101,6 +112,12 @@ h1{
   transform: translateX(-35%);
 }
 
+.logo-corner{
+  height: 10vh;
+  position: fixed;
+  left: 4vw;
+  top: 5vh;
+}
 .green{
   color: rgb(77, 255, 92);
 }
@@ -139,12 +156,15 @@ h1{
   display: flex;
   align-items: center;
 }
+
+
 .right-inner-container{
   height: 30%;
   width: 100%;
   position: relative;
   display: flex;  
   align-items: center;
+  cursor:default;
 }
 #main-text-container{
   height: 3em;
@@ -186,4 +206,9 @@ h1{
   position: absolute;
   font-size: 3em;
   white-space: nowrap;
+}
+
+.center-container-store {
+
+
 }
