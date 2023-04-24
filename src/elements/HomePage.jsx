@@ -9,10 +9,12 @@ export default function HomePage(props) {
 //https://framerbook.com/animation/example-animations/26-tracking-the-cursor/
 
 
-  const windowSizeX = useRef([window.innerWidth, window.innerHeight]).current[0]
+  //const windowSizeX = useRef([window.innerWidth, window.innerHeight]).current[0]
   const windowSizeY = useRef([window.innerWidth, window.innerHeight]).current[1]
 
-  const springOptions = {damping:16, stiffness:50, mass:1.5}
+  const [windowSizeX, setWindowSizeX] = useState(window.innerWidth)
+
+  const springOptions = {damping:30,stiffness:100, restDelta:0.001}
 
 
 
@@ -22,14 +24,18 @@ export default function HomePage(props) {
 
   //animation for 'ohayo we are hiro'
 
-  const springX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-6, 0, 0, 6]),springOptions);
-  const springY = useSpring(useTransform(props.mousePosY, [0,windowSizeY/2,windowSizeY/2,windowSizeY],[-6, 0, 0, 6]),springOptions);
+  
+
+
+  const springY = useSpring(useTransform(props.mousePosY, [0,windowSizeY/2,windowSizeY/2,windowSizeY],[-15, -7, -7, 0]),springOptions);
 
   //animations for 'hiroshi-jap'
-  const springBackX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]), springOptions);
-  const springBackY = useSpring(useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-5, 0, 0, 5]),springOptions);
+  const springBackX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-(windowSizeX/100)*0.4, 0, 0, (windowSizeX/100 )*0.4]), springOptions);
+  const springBackY = useSpring(useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-10, 0, 0, 10]),springOptions);
 
   let location = useLocation();
+
+
 
   useEffect(()=>{
     if(hovering){
@@ -38,20 +44,16 @@ export default function HomePage(props) {
       changeOpacity('div', {opacity:1} ,{duration:0.3})
 
       //animations for .jap-text
-      scale(scopeBackground.current, {y:'-50%'})
       scale(scopeBackground.current, {scale:1.1}, {duration:0.2, ease:'easeOut'})
     } else{
 
       changeOpacity('h1', {opacity:1}, {duration:0.4})
-      changeOpacity('div', {opacity:0, y:'-50%'}, {duration:0.3})
+      changeOpacity('div', {opacity:0}, {duration:0.3})
 
 
-      scale(scopeBackground.current, {duration:0, y:'-50%'})
       scale(scopeBackground.current, {scale:1},{duration:0.2, ease:'easeOut'})
     }
   })
-
-
 
 
   const [hovering, setHovering] = useState(false)
@@ -74,7 +76,13 @@ export default function HomePage(props) {
               <motion.div style={{x:springBackX, y:springBackY}} className='jap-text jap' id='shi-jap'>シ</motion.div>
             </div>
             
-            <motion.div style={{x:springX, y:springBackY}} ref ={scope} onMouseEnter = {()=> setHovering(true)} onMouseLeave={()=>setHovering(false)} id='main-text-container' >
+            <motion.div style={{
+              x:
+            useSpring(useTransform(props.mousePosX,
+              [0,windowSizeX/2,windowSizeX/2,windowSizeX],
+              [-(windowSizeX/100)*0.5,0 ,0 ,(windowSizeX/100)*0.5 ]),
+              springOptions)
+              , y:springY}} ref ={scope} onMouseEnter = {()=> setHovering(true)} onMouseLeave={()=>setHovering(false)} id='main-text-container' >
               <h1 className='main-text'>Ohayo, we are Hiro</h1>
               <div className='jap green ohayo-jap'>オハヨヒロだ</div>
             </motion.div>

@@ -1,4 +1,9 @@
 
+:root{
+  --green:rgb(77, 255, 92);
+  --black:rgb(23,23,23);
+}
+
 @font-face {
   font-family: helvetica-display-extra-bold;
   src: url(fonts/HelveticaNowDisplayXBold.otf);
@@ -10,12 +15,14 @@
 
 @font-face {
   font-family: helvetica-regular;
-  src: url(fonts/Helvetica-Now-Display-Black.otf);
+  src: url(fonts/Helvetica\ Now\ Text\ Medium.otf);
 }
+
 @font-face {
   font-family: helvetica-bold;
-  src: url(fonts/HelveticaNowTextBold.otf);
+  src: url(fonts/Helvetica\ Now\ Display\ Bold.otf);
 }
+
 *{
   list-style: none;
   text-decoration:none;
@@ -51,7 +58,7 @@
 }
 h1{
   font-weight: bolder;
-  font-size: 2rem;
+  font-size: 4.5vh;
 }
 
 .header{
@@ -78,13 +85,16 @@ h1{
   margin:0.8vw;
   font-family: helvetica;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 2vh;
   transition-duration: 0.3s;
 }
 .navBar li:hover{
   opacity: 0.5;
 }
 
+.logo-container-navbar:hover{
+opacity: 1;
+}
 
 .homePage {
   height: 100svh;
@@ -162,13 +172,17 @@ h1{
   height: 30%;
   width: 100%;
   position: relative;
-  display: flex;  
+  display: grid;  
   align-items: center;
   cursor:default;
+  justify-content:start;
 }
 #main-text-container{
   height: 3em;
   width: fit-content;
+  grid-area: 1/1/2/2;
+  display: grid;
+  align-content: center;
 }
 
 #main-text-container :hover>h1{
@@ -176,14 +190,14 @@ h1{
 }
 
 .main-text{
+  align-self: center;
+  grid-area: 1/1/2/2;
 }
 .back-hiroshi-jap-container{
   display: flex;
   overflow: visible;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-46%);
-  left: 1.5em
+  grid-area: 1/1/2/2;
+  justify-self: center;
 }
 
 
@@ -191,7 +205,7 @@ h1{
   height: 100%;
   justify-content: end;
   font-weight: 900;
-  font-size: 5.1rem;
+  font-size: 11vh;
   width: 0.85em;
   color: rgba(245,245,245,0.2);
 
@@ -203,12 +217,94 @@ h1{
 .ohayo-jap {
   top:50%;
   opacity: 0;
-  position: absolute;
-  font-size: 3em;
+  font-size: 6vh;
   white-space: nowrap;
+  grid-area: 1/1/2/2;
 }
 
-.center-container-store {
+.center-container-projects{
+  margin-top:12vh;
+  margin-left: 5vw;
+  position: relative;
+  width: 95vw;
+  height: 80vh;
+}
+
+.video-card{
+  width: 41vh;
+  height: 60vh;
+  background-color: whitesmoke;
+}
+
+#recent-projects{
+  position: absolute;
+  font-size: 11vh;
+  font-family: helvetica-regular;
+  font-weight: 100;
+  opacity: 0.3;
+}
+
+.container-cards{
+  display: flex;
+  position:absolute;  
+  top: 16%;
+  left: 2.5%;
+}
+
+.container-cards li{
+  margin:0.5vw;
+}
+
+.logo-thumbnail{
+  border-radius: 50%;
+  background-color: var(--green);
+  height: 3vw;
+  width: 3vw;
+  position: absolute;
+  top:53%;
+  left: 17%;
+  z-index: 3;
+
+}
+
+.card-title{
+  height: 32%;
+  background-color: var(--green);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  font-family: helvatica-display-extra-bold;
+}
 
 
+
+.title-section div{
+  font-size: 3vh;
+  text-align: start;
+  color:var(--black);
+  line-height: 100%;
+}
+.title-english{
+  font-family: helvetica-display-extra-bold;
+
+}
+
+.title-japanise{
+  font-family: jap-bold;
+  margin-top: 2%;
+}
+
+.card-year{
+  color: var(--black);
+  font-family: helvetica-display-extra-bold;
+  font-size: 2.5vh;
+  margin-top: 20%;
+}
+
+.hide-scrollbar{
+  overflow-x: scroll;
+  overflow-x: hidden;
+}
+
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
 }
