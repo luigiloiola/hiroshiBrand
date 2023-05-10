@@ -78,15 +78,35 @@ button {
   height:100%;
   width: 100vw;
   background-color: rgb(23, 23, 23);
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.App::-webkit-scrollbar{
+  display: none;
 }
 
 .jap{
   font-family: jap-bold;
 }
+
+
 h1{
   font-weight: bolder;
   font-size: max(4.5vh, 2em);
+  font-family: helvetica-display-extra-bold;
+}
+
+h2{
+  font-family: helvetica-bold;
+}
+
+.thin{
+  font-family: helvetica-regular;
+}
+h1 div{  
+  height: fit-content;
+  line-height: 1em;
+  font-family: helvetica-bold;
 }
 
 .header{
@@ -260,8 +280,8 @@ opacity: 1;
 }
 
 .video-card{
-  width: max(49vh, 17em);
-  height: max(60vh, 20em);
+  width: max(39vh, 15em);
+  height: max(52vh, 20em);
   background-color: whitesmoke;
   transition: 0.2s;
 } 
@@ -289,7 +309,17 @@ opacity: 1;
 }
 
 .container-cards li{
-  margin:0.5vw;
+  margin:1.5vh;
+}
+.center{
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  margin:15vh auto 0 auto;
+}
+
+.center > * {
+  margin:6vh 0;
 }
 
 .subtitle{
@@ -349,4 +379,14 @@ opacity: 1;
 
 .hide-scrollbar::-webkit-scrollbar{
   display: none;
+}
+
+#teaser-video-container div{
+  color: black;
+  position:absolute;
+  transform:translateY(-100%);
+}
+
+.bold{
+  font-family: helvetica-regular;
 }

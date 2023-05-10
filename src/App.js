@@ -7,6 +7,7 @@ import NavBar from './elements/NavBar';
 import Store from './elements/Store'
 import {motion} from 'framer-motion'
 import Projects from './elements/Projects';
+import About from './elements/About';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route exact path='/' element={<HomePage mousePosX = {posX} mousePosY = {posY}/>}/>
         <Route path='/Store' element = {<Store/>}/>
         <Route path='/Projects' element = {<Projects/>}/>
+        <Route path='/About' element = {<About/>}/>
       </Routes>
     </div>
   );

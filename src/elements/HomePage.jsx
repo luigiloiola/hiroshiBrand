@@ -30,7 +30,7 @@ export default function HomePage(props) {
   const springY = useSpring(useTransform(props.mousePosY, [0,windowSizeY/2,windowSizeY/2,windowSizeY],[-15, -7, -7, 0]),springOptions);
 
   //animations for 'hiroshi-jap'
-  const springBackX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-(windowSizeX/100)*0.4, 0, 0, (windowSizeX/100 )*0.4]), springOptions);
+  const springBackX = useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX],[-(windowSizeX/100)*0.25, 0, (windowSizeX/100 )*0.25]), springOptions);
   const springBackY = useSpring(useTransform(props.mousePosY, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-10, 0, 0, 10]),springOptions);
 
   let location = useLocation();
@@ -71,18 +71,18 @@ export default function HomePage(props) {
         <div className='right-container'>
           <div className='right-inner-container'>
             <div ref={scopeBackground} className='back-hiroshi-jap-container'>
-              <motion.div style={{x:springBackX, y:springBackY}} className='jap-text jap'>ヒ</motion.div>
-              <motion.div style={{x:springBackX, y:springBackY}} className='jap-text jap' >ロ</motion.div>
-              <motion.div style={{x:springBackX, y:springBackY}} className='jap-text jap' id='shi-jap'>シ</motion.div>
+              <motion.div style={{x:springBackX}} className='jap-text jap'>ヒ</motion.div>
+              <motion.div style={{x:springBackX}} className='jap-text jap' >ロ</motion.div>
+              <motion.div style={{x:springBackX}} className='jap-text jap' id='shi-jap'>シ</motion.div>
             </div>
             
             <motion.div style={{
               x:
             useSpring(useTransform(props.mousePosX,
               [0,windowSizeX/2,windowSizeX/2,windowSizeX],
-              [-(windowSizeX/100)*0.5,0 ,0 ,(windowSizeX/100)*0.5 ]),
+              [-(windowSizeX/100)*0.3,0 ,0 ,(windowSizeX/100)*0.3 ]),
               springOptions)
-              , y:springY}} ref ={scope} onMouseEnter = {()=> setHovering(true)} onMouseLeave={()=>setHovering(false)} id='main-text-container' >
+              }} ref ={scope} onMouseEnter = {()=> setHovering(true)} onMouseLeave={()=>setHovering(false)} id='main-text-container' >
               <h1 className='main-text'>Ohayo, we are Hiro</h1>
               <div className='jap green ohayo-jap'>オハヨヒロだ</div>
             </motion.div>
