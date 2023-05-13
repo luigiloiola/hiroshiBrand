@@ -45,6 +45,35 @@ function About() {
             <img src={bandeiraHIRO} style={{display:'block', height:'100%', position:'absolute', left:'50%', transform:'translateX(-50%)'}} />
         </div>
       </div>
+      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr'}}>
+        <div>
+          <h2>
+            DISCOVER YOUR POSSIBILITIES.
+          </h2>
+          <div className='green'>find what you need</div>
+        </div>
+        <ul className='thin-border'>
+          <li>Branded Content</li>
+          <li>Social Media</li>
+          <li>Documentaries</li>
+          <li>Motion Design</li>
+          <li>3D Models</li>
+          <li>Content Strategy</li>
+        </ul>
+      </div>
+      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr'}}>
+        <img></img>
+        <div>
+          <h2>Your challenges are our challenges.</h2>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis aspernatur ea consequatur nam voluptas obcaecati soluta atque architecto! Facilis laudantium dignissimos quaerat repudiandae dolore. Recusandae dignissimos sed est molestias.
+
+          </div>
+          <div>hiroshi Sumiya</div>
+          <div>-Creative Director and Founder</div>
+        </div>
+
+      </div>
     </div>
   )
 }
