@@ -73,7 +73,6 @@ function About() {
           <div>-Creative Director and Founder</div>
         </div>
 
-      </div>
     </div>
   )
 }
