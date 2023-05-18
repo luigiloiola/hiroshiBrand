@@ -1,5 +1,6 @@
 import React from 'react'
 import bandeiraHIRO from './bandeiraHIRO.png'
+import aaa from './Sem_titulo-1.svg'
 
 
 
@@ -10,6 +11,8 @@ import bandeiraHIRO from './bandeiraHIRO.png'
 function About() {
   return (
     <div className='center'>
+        
+      <img src={aaa} style={{height:'1em'}}></img>
       <h1 style={{textAlign:'start', marginLeft:'5vw', fontSize:'clamp(1em, 5vh, 6em)', display:'flex', flexDirection:'column'}}>
         <div>We are Hiro.</div>
         <div>Creative Content Studio based in São Paulo, Brazil.</div>
@@ -71,6 +74,7 @@ function About() {
           </div>
           <div>hiroshi Sumiya</div>
           <div>-Creative Director and Founder</div>
+          
         </div>
       </div>
     </div>

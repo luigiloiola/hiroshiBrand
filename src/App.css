@@ -129,7 +129,7 @@ h1 div{
 }
 
 .navBar li{
-  margin:0.8vw;
+  margin:1vw;
   font-family: helvetica;
   font-weight: 600;
   font-size: 2vh;
@@ -279,7 +279,7 @@ opacity: 1;
 }
 
 .video-card{
-  width: max(39vh, 15em);
+  width: max(45vh, 15em);
   height: max(52vh, 20em);
   background-color: whitesmoke;
   transition: 0.2s;
@@ -339,7 +339,7 @@ opacity: 1;
 }
 
 .card-title{
-  height: 32%;
+  height: 37%;
   background-color: var(--green);
   display: grid;
   grid-template-columns: 3fr 1fr;
