@@ -28,7 +28,6 @@
   text-decoration:none;
   margin:0;
   padding: 0;
-  border: none;
   color: whitesmoke;
 }
 
@@ -73,7 +72,6 @@ button {
   height:100vh;
 }
 .App {
-  text-align: center;
   margin: 0px;
   height:100%;
   width: 100vw;
@@ -389,4 +387,9 @@ opacity: 1;
 
 .bold{
   font-family: helvetica-regular;
+}
+
+.thin-border li{
+  border-top:0.1em solid rgba(245,245,245,0.5);
+  padding: 0.5em;
 }
