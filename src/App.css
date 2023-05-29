@@ -128,7 +128,7 @@ h1 div{
 }
 
 .navBar li{
-  margin:0.8vw;
+  margin:1vw;
   font-family: helvetica;
   font-weight: 600;
   font-size: 2vh;
@@ -278,7 +278,7 @@ opacity: 1;
 }
 
 .video-card{
-  width: max(39vh, 15em);
+  width: max(45vh, 15em);
   height: max(52vh, 20em);
   background-color: whitesmoke;
   transition: 0.2s;
@@ -338,7 +338,7 @@ opacity: 1;
 }
 
 .card-title{
-  height: 32%;
+  height: 37%;
   background-color: var(--green);
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -390,6 +390,11 @@ opacity: 1;
 }
 
 .thin-border li{
+<<<<<<< HEAD
   border-top:0.1em solid rgba(245,245,245,0.5);
   padding: 0.5em;
+=======
+  border-top: 0.1em solid rgba(240,240,240,0.5);
+  padding:0.5em 0 0.4em 0;
+>>>>>>> aaf1816067f5de57b84d7f8a5847f92641fb90b1
 }

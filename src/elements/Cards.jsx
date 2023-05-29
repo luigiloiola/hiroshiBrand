@@ -18,12 +18,12 @@ function Cards(props) {
     if(hovering) {
       //animate1(scope1.current, {} ,{duration:0.3, ease:'easeInOut'},transition)
       //animate2(scope2.current, {height:'83%'},{duration:0.3, ease:'easeInOut'})
-      animate3(scope3.current, {y:'-8.5vh', scale:1},transition)
+      animate3(scope3.current, {y:'-1.5vh', scale:1.05, width:'48vh', margin:'2.2vh'},transition)
       //animate4(scope4.current, {y:'-5.2vh'},transition)
     } else{
       //animate1(scope1.current, {y:0},{duration:0.3, ease:'easeInOut'})
       //animate2(scope2.current, {height:'88%'},{duration:0.3, ease:'easeInOut'})  
-      animate3(scope3.current, {y:0, scale:1},transition)
+      animate3(scope3.current, {y:0, scale:1,width:'45vh', margin:'1.5vh'},transition)
       //animate4(scope4.current, {y:'-50%'},transition)
     }
     

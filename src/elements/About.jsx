@@ -1,5 +1,6 @@
 import React from 'react'
 import bandeiraHIRO from './bandeiraHIRO.png'
+import aaa from './Sem_titulo-1.svg'
 
 
 
@@ -10,6 +11,8 @@ import bandeiraHIRO from './bandeiraHIRO.png'
 function About() {
   return (
     <div className='center'>
+        
+      <img src={aaa} style={{height:'1em'}}></img>
       <h1 style={{textAlign:'start', marginLeft:'5vw', fontSize:'clamp(1em, 5vh, 6em)', display:'flex', flexDirection:'column'}}>
         <div>We are Hiro.</div>
         <div>Creative Content Studio based in São Paulo, Brazil.</div>
@@ -47,18 +50,18 @@ function About() {
       </div>
       <div style={{display:'grid', gridTemplateColumns:'1fr 1fr'}}>
         <div>
-          <h2>
+          <h2 style={{fontsize:'6em'}}>
             DISCOVER YOUR POSSIBILITIES.
           </h2>
           <div className='green'>find what you need</div>
         </div>
-        <ul className='thin-border'>
+        <ul className='thin-border regular' style={{fontSize:'1.8em'}}>
           <li>Branded Content</li>
           <li>Social Media</li>
           <li>Documentaries</li>
           <li>Motion Design</li>
           <li>3D Models</li>
-          <li>Content Strategy</li>
+          <li style={{borderBottom:'0.1em solid rgba(240,240,240,0.5)'}}>Content Strategy</li>
         </ul>
       </div>
       <div style={{display:'grid', gridTemplateColumns:'1fr 1fr'}}>
@@ -71,8 +74,8 @@ function About() {
           </div>
           <div>hiroshi Sumiya</div>
           <div>-Creative Director and Founder</div>
+          
         </div>
-
       </div>
     </div>
   )
