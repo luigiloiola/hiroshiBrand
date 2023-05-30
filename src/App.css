@@ -28,6 +28,7 @@
   text-decoration:none;
   margin:0;
   padding: 0;
+  border: none;
   color: whitesmoke;
 }
 
@@ -60,8 +61,8 @@ button {
 
 
 .upper-navbar{
-  position: fixed;
-  top:5vh;
+  position: absolute;
+  top:7vh;
   right: 5vh;
   font-family:helvetica-regular;
 
@@ -77,6 +78,7 @@ button {
   width: 100vw;
   background-color: rgb(23, 23, 23);
   overflow-x: hidden;
+  position:relative
 }
 
 .App::-webkit-scrollbar{
@@ -171,7 +173,7 @@ opacity: 1;
 .logo-corner{
   height: calc(5vh + 2vw);
   width:calc(5vh + 2vw);
-  position: fixed;
+  position: absolute;
   left: 4vw;
   top: 5vh;
 }
@@ -278,10 +280,11 @@ opacity: 1;
 }
 
 .video-card{
-  width: max(45vh, 15em);
-  height: max(52vh, 20em);
+  width: max(104vh, 16em);
+  height: max(59vh, 9em);
   background-color: whitesmoke;
   transition: 0.2s;
+  overflow: hidden;
 } 
 
 .video-card:hover{
@@ -302,7 +305,7 @@ opacity: 1;
 .container-cards{
   display: flex;
   position:absolute;  
-  top: 14%;
+  top: 12.7%;
   
 }
 
@@ -390,11 +393,6 @@ opacity: 1;
 }
 
 .thin-border li{
-<<<<<<< HEAD
-  border-top:0.1em solid rgba(245,245,245,0.5);
-  padding: 0.5em;
-=======
   border-top: 0.1em solid rgba(240,240,240,0.5);
   padding:0.5em 0 0.4em 0;
->>>>>>> aaf1816067f5de57b84d7f8a5847f92641fb90b1
 }
