@@ -61,8 +61,8 @@ button {
 
 
 .upper-navbar{
-  position: fixed;
-  top:5vh;
+  position: absolute;
+  top:7vh;
   right: 5vh;
   font-family:helvetica-regular;
 
@@ -78,6 +78,7 @@ button {
   width: 100vw;
   background-color: rgb(23, 23, 23);
   overflow-x: hidden;
+  position:relative
 }
 
 .App::-webkit-scrollbar{
@@ -172,7 +173,7 @@ opacity: 1;
 .logo-corner{
   height: calc(5vh + 2vw);
   width:calc(5vh + 2vw);
-  position: fixed;
+  position: absolute;
   left: 4vw;
   top: 5vh;
 }
@@ -279,10 +280,11 @@ opacity: 1;
 }
 
 .video-card{
-  width: max(45vh, 15em);
-  height: max(52vh, 20em);
+  width: max(104vh, 16em);
+  height: max(59vh, 9em);
   background-color: whitesmoke;
   transition: 0.2s;
+  overflow: hidden;
 } 
 
 .video-card:hover{
@@ -293,17 +295,26 @@ opacity: 1;
 }
 
 #recent-projects{
+  display: flex;
+  flex-direction: row;
   position: absolute;
   font-size: max(11vh, 3em);
   font-family: helvetica-regular;
   font-weight: 100;
-  opacity: 0.3;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.rp-items{
+  margin:0 0.7em
+}
+
 
 .container-cards{
   display: flex;
   position:absolute;  
-  top: 14%;
+  top: 15%;
   
 }
 
