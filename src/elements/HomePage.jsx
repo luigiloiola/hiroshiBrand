@@ -24,7 +24,26 @@ export default function HomePage(props) {
 
   //animation for 'ohayo we are hiro'
 
-  
+
+  const variants = {
+    initial : {x:'60vw', 
+    transition:{
+      ease:[1, 0.01, 0.4, 1.01]
+    }},
+    animate : {x:0, 
+    transition:{
+      delay:0.8,
+      duration:0.6,
+      ease:[1, 0.01, 0.4, 1.01]
+    }},
+    exit : {x:'60vw', 
+      transition:{
+        duration:0.4,
+        ease:[1, 0.01, 0.4, 1.01]
+      }}
+  }
+
+
 
 
   const springY = useSpring(useTransform(props.mousePosY, [0,windowSizeY/2,windowSizeY/2,windowSizeY],[-15, -7, -7, 0]),springOptions);
@@ -59,18 +78,49 @@ export default function HomePage(props) {
   const [hovering, setHovering] = useState(false)
     return (
       <div className='homePage'>
-        <div className='left-container'>
-          <motion.div style = {{height:'100%', width:'100%', display:'flex', 
+        <motion.div 
+        initial={{
+          x:'-100%'
+        }}
 
+        animate={{
+          x:0,
+          transition:{
+            delay:0.9,
+            duration:0.6,
+            ease:[1, 0.01, 0.4, 1.01]
+          }
+        }}
+        exit={{
+          x:'-100%',
+          transition:{
+            delay:0.2,
+            duration:0.6,
+            ease:[1, 0.01, 0.4, 1.01]
+          }
+      }}
+        
+        className='left-container'>
+          <motion.div 
+          
+          style = {{height:'100%', width:'100%', display:'flex', 
+      
           x:
             useSpring(useTransform(props.mousePosX, [0,windowSizeX/2,windowSizeX/2,windowSizeX],[-4, 0, 0, 4]), {stiffness:20, damping:16})
-            }}>
+            }} 
+
+            >
             <motion.img className='hiro-homePage' src={Asset1}></motion.img>
           </motion.div>
-        </div>
+        </motion.div>
         <div className='right-container'>
-          <div className='right-inner-container'>
-            <div ref={scopeBackground} className='back-hiroshi-jap-container'>
+          <motion.div variants={variants}
+          initial='initial'
+          animate='animate'
+          exit = 'exit'
+          className='right-inner-container'>
+            <div 
+            ref={scopeBackground} className='back-hiroshi-jap-container'>
               <motion.div style={{x:springBackX}} className='jap-text jap'>ヒ</motion.div>
               <motion.div style={{x:springBackX}} className='jap-text jap' >ロ</motion.div>
               <motion.div style={{x:springBackX}} className='jap-text jap' id='shi-jap'>シ</motion.div>
@@ -86,7 +136,7 @@ export default function HomePage(props) {
               <h1 className='main-text'>Ohayo, we are Hiro</h1>
               <div className='jap green ohayo-jap'>オハヨヒロだ</div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
     )
