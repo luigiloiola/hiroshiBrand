@@ -3,7 +3,7 @@ import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Asset13 from "./Asset13.svg";
 import svg from "./Sem_titulo-1.svg";
 import instagramLogo from "./instagram-logo.svg";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -34,32 +34,32 @@ export default function NavBar() {
 
   return (
     <>
-      {!(location.pathname == "/") ? (
-        <a className="logo-corner" onClick={handleAdressHome}>
-          <motion.img
-            initial={{
-              x:'-30vw'
-            }}
-            animate={{
-              x:0,
-              transition: {
-                delay:0.2,
-                duration: 0.6,
-              },
-            }}
-            exit={{
-              x:'-30px',
-              transition: {
-                delay:1,
-                duration: 1,
-              },
-            }}
-            src={Asset13}
-          ></motion.img>
-        </a>
-      ) : (
-        <></>
+    <AnimatePresence>
+      {location.pathname != '/' && (
+         <motion.a className="logo-corner" onClick={handleAdressHome}
+         initial={{
+           x:'-30vw'
+         }}
+         animate={{
+           x:0,
+           transition: {
+             delay:0.2,
+             duration: 0.6,
+           },
+         }}
+         exit={{
+           x:'-30vw',
+           transition: {
+             duration: 0.4,
+             ease:'easeInOut'
+           },
+         }}>
+           <img
+             src={Asset13}
+           ></img>
+         </motion.a>
       )}
+    </AnimatePresence>
       <div
         className="upper-navbar"
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
