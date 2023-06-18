@@ -314,11 +314,8 @@ opacity: 1;
 .container-cards{
   display: flex;
   position:absolute;  
-<<<<<<< HEAD
   top: 15%;
-=======
   top: 12.7%;
->>>>>>> 441c1de145c13fe4d2f7eecdfdb11190dda837d2
   
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import bandeiraHIRO from './bandeiraHIRO.png'
 import aaa from './Sem_titulo-1.svg'
+import {motion, animatePresence} from 'framer-motion'
 
 
 
@@ -8,16 +9,60 @@ import aaa from './Sem_titulo-1.svg'
 //prob just use clamp() on everything
 
 
+
+const parentAniation = {
+  intial:{
+
+  },
+  animate:{
+    transition:{
+      staggerAnimation:0.1,
+      staggerDirection:1
+    }
+  },
+  exit:{
+    transition:{
+      staggerAnimation:0.1,
+      staggerDirection:-1
+    }
+  }
+}
+
+const variants = {
+  intial:{
+    x:'-100vw'
+  },
+  animate:{
+    x:0,
+    transition:{
+      delay:0.6,
+      duration:0.6,
+      ease:[.01,.84,.61,1.04]
+    },
+    exit:{
+      x:'100vw',
+      transition:{
+          duration:0.6,
+          ease:[0.56, 0.02, 0, 1]
+      }
+    }
+  }
+}
+
 function About() {
   return (
     <div className='center'>
         
-      <img src={aaa} style={{height:'1em'}}></img>
-      <h1 style={{textAlign:'start', marginLeft:'5vw', fontSize:'clamp(1em, 5vh, 6em)', display:'flex', flexDirection:'column'}}>
-        <div>We are Hiro.</div>
-        <div>Creative Content Studio based in São Paulo, Brazil.</div>
-        <div>New times demand new perspectives.</div> 
-      </h1>
+      <motion.img variants={variants} src={aaa} style={{height:'1em'}}></motion.img>
+      <motion.h1 variants={parentAniation}
+      animate='animate'
+      intial='initial'
+      exit='exit'
+      style={{textAlign:'start', marginLeft:'5vw', fontSize:'clamp(1em, 5vh, 6em)', display:'flex', flexDirection:'column'}}>
+        <motion.div variants={variants}>We are Hiro.</motion.div>
+        <motion.div variants={variants}>Creative Content Studio based in São Paulo, Brazil.</motion.div>
+        <motion.div variants={variants}>New times demand new perspectives.</motion.div> 
+      </motion.h1>
       <div style={{width:'100%', height:'90vh', backgroundColor:'whiteSmoke',alignItems:'center',justifyContent:'center', display:'flex'}}>
         <div className='regular' id='teaser-video-container' style={{width:'85%', height:'80%', backgroundColor:'black', position:'relative'}}>
           <img src="" style={{maxWidth: '100%', maxHeight: '100%', display: 'block', margin: 'auto'}} />
