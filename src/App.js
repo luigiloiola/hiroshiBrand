@@ -24,15 +24,24 @@ function App() {
       posY.set(e.pageY);
   };
 
+  const transition = {
+    transition:{
+      duration:0.6,
+      ease:[1, 0.01, 0.4, 1.01]
+    }
+  }
+
   return (
     <div className="App" onMouseMove={handleMouse}>
-      <NavBar/>
-      <Routes location={location} key={useLocation().key}>
-        <Route exact path='/' element={<HomePage mousePosX = {posX} mousePosY = {posY}/>}/>
-        <Route path='/Store' element = {<Store/>}/>
-        <Route path='/Projects' element = {<Projects/>}/>
-        <Route path='/About' element = {<About/>}/>
-      </Routes>
+      <AnimatePresence initial={false}>
+        <NavBar/>
+        <Routes location={location} key={useLocation().key}>
+          <Route exact path='/' element={<HomePage mousePosX = {posX} mousePosY = {posY} transition = {transition} />}/>
+          <Route path='/Store' element = {<Store transition={transition} />}/>
+          <Route path='/Projects' element = {<Projects transition={transition} />}/>
+          <Route path='/About' element = {<About transition={transition} />}/>
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }
